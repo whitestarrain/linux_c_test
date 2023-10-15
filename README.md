@@ -1,3 +1,3 @@
 # ABOUT
 
-linux-c test code
+c/c++ test code
