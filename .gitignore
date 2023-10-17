@@ -30,6 +30,8 @@ bin/
 # Ignore all `library.jar` in `bin` dir
 */bin/library.jar
 
+!**/Makefile
+
 .vscode
 output
 
