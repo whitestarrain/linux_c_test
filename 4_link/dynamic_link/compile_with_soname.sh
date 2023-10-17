@@ -11,6 +11,8 @@ ln -s $(pwd)/libstack.so.1.0 $(pwd)/libstack.so
 # compile main and link libstack
 gcc main.c -g -L. -lstack -Istack -omain
 
+ldd main
+
 # or edit /etc/ld.so.conf, add current path
 # and run `sudo ldconfig -v`
 LD_LIBRARY_PATH=. ./main
