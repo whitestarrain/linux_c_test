@@ -1,4 +1,6 @@
 # https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# https://stackoverflow.com/questions/65569245/clang-format-how-to-avoid-new-line-breaks
+# https://stackoverflow.com/questions/33656800/clang-format-line-breaks/34339430
 
 Language: Cpp
 

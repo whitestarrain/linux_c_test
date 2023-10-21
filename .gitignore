@@ -13,11 +13,12 @@
 *.class
 *.sm
 
-# Ignore files with extension .o .a .so .so.*
+# Ignore files with extension .o .a .so .so.* .d
 *.o
 *.a
 *.so
 *.so.*
+*.d
 
 # Ignore `bin` dir
 bin/
