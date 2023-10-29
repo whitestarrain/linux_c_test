@@ -1,4 +1,9 @@
 #include <stdio.h>
+/**
+ * 1. common pointer and array
+ * 2. pointer pointed to array
+ */
+
 int main(int argc, char *argv[])
 {
     // a array contain 10 pointer
