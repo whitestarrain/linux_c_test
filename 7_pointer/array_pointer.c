@@ -1,13 +1,10 @@
 #include <stdio.h>
-/**
- * 1. common pointer and array
- * 2. pointer pointed to array
- */
 
 int main(int argc, char *argv[])
 {
     // a array contain 10 pointer
     int  *pointer_array[10];
+
     int **p  = &pointer_array[0];
     int **p1 = pointer_array;
 
@@ -60,4 +57,15 @@ int main(int argc, char *argv[])
         p3 == *p2
         但是 &p3 != p2
      */
+}
+
+void test(int argc, char *argv[])
+{
+    int a[10]    = {[2] = 3, [3] = 5};
+    int(*pa)[10] = &a;
+    printf("%d\n", (*pa)[2]);
+    printf("%d\n", pa[0][2]);
+
+    // 注意，下面是错误的，为  *(*(pa+2))，上面的则是  *(*(pa)+2)
+    printf("%d\n", *pa[2]);
 }
