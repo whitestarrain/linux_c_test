@@ -1,4 +1,4 @@
-/* redirect_ptr.c */
+/* 两层指针的参数 */
 #include <stdio.h>
 
 static const char *msg[] = {"Sunday",
