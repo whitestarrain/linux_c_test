@@ -1,6 +1,6 @@
-#/bin/bash
+#!/bin/bash
 
-rm -rf /root/project/linux-c-src/4_link/dynamic_link/{main,*.{a,o,so}}
+rm -rf ./{main,*.{a,o,so},*.so.*}
 
 # compile "Position Independent Code" Object file
 gcc -c -g -fPIC stack/pop.c stack/push.c stack/stack.c stack/is_empty.c
