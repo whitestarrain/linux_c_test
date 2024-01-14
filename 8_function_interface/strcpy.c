@@ -25,13 +25,14 @@ int main(int argc, char *argv[])
     // strcpy(buf, str);
     // printf("%s\n", buf);
     strncpy(buf, "hello world", sizeof(buf) - 1);
-    printf("%s\n", buf);
+    printf("buf: %s\n", buf);
 
     char *s = "This Content hoho  \n   \n  \r is ok ok? \t file system uttered "
               "words \t  ok ok      ? end.";
     // if don't assign a value of '' for the array in stack, the buf2 value will be random
     // static array default is a list of '\0'. (because the .bss section)
     char  buf2[30] = "";
+    printf("buf2: %s\n", buf2);
     printf("%s\n", shrink_space(buf2, s, sizeof(buf2)));
     return 0;
 }
