@@ -11,6 +11,7 @@ typedef struct
 
 int main(int argc, char *argv[])
 {
+    printf("size of unit_t: %lu\n", sizeof(unit_t));
     unit_t *p = malloc(sizeof(unit_t));
     if (p == NULL) {
         printf("out of memory \n");

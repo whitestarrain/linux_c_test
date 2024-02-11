@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
         perror("seek file temp/test.txt");
         exit(1);
     }
+    int pos = ftell(fp);
+    printf("%d", pos);
     fputc('k', fp);
     fclose(fp);
     return EXIT_SUCCESS;
