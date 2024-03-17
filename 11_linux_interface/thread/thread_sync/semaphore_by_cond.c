@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-// TODO: implement semaphore by condition variable
-
 struct my_sem_t
 {
     int             value;
