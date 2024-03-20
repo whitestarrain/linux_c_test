@@ -1,4 +1,7 @@
-all: server client
+all: server client select_server
+
+select_server: ../wrap.o select_server.o
+	gcc $^ -o $@
 
 server: ../wrap.o server.o
 	gcc $^ -o $@
@@ -7,7 +10,7 @@ client: ../wrap.o client.o
 	gcc $^ -o $@
 
 clean:
-	-rm *.o *.d ../*.d ../*.o server client
+	-rm *.o *.d ../*.d ../*.o server client select_server
 
 .PHONY: clean
 
