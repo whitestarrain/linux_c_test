@@ -2,7 +2,7 @@
 #define print_expr(expr)                 \
     do {                                 \
         printf("%s :%d\n", #expr, expr); \
-    } while (0);
+    } while (0)
 
 int main(int argc, char *argv[])
 {
