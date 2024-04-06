@@ -63,8 +63,11 @@ void memcpy_arr_test()
     // 声明为数组指针，使用[] 的时候，内存地址计算为 src + element_len * i + j
     // 如果声明为 int **， 就会dereference两次，出现段访问错误
     // 原因是因为
+        // 二维数组里面，数组的地址，和数组第一个元素的地址是相同的。
         // src为指向 int[element_len] 的指针，src+1，将会吧内存偏移sizeof(int[elelment_len]) 个地址
-        // src若为 int** ，则src+1 仅会偏移 sizeof(int *)个地址
+        // src为一个指向一维数组的指针, *src 会获取到数组，**src会获取到数组的第一个元素。指针的深度为1，但可以dereference两次
+        // src若为 int** ，则src+1 仅会偏移 sizeof(int *)个地址。
+
     int(*src)[element_len]  = malloc(sizeof(int) * arr_len * element_len);
     int(*dest)[element_len] = malloc(sizeof(int) * arr_len * element_len);
     for (int i = 0; i < arr_len; i++) {
