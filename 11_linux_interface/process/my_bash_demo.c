@@ -76,9 +76,9 @@ void exec_wrap(char *arg_ptr, int *pipe_fds, int pipe_write, int pipe_read)
         close(input_fd);
     }
     if (output_fd != -1) {
-        // 这里也可以不适用dup，手动数据，处理后，再写入STDOUT也行，灵活性更高。
-        // 当前的代码处理不了 cat < temp.txt | wc -l >
-        // temp.txt，这种，读和写都是同一个文件的case
+        // 这里也可以不使用dup，手动数据，处理后，再写入STDOUT也行，灵活性更高。
+        // 当前的代码处理不了 cat < temp.txt | wc -l > temp.txt
+        // 这种读和写都是同一个文件的case
         dup2(output_fd, STDOUT_FILENO);
         close(output_fd);
     }
@@ -135,12 +135,12 @@ void run_cmd(char *buf)
         }
     }
 
-    // pid1, when prent fork child1, pid1 is 0
+    // pid1, when parent fork child1, pid1 is 0
     if (pid1 == 0) {
         exec_wrap(buf, pipe_filedes, 1, 0);
     }
 
-    // pid2 (if exist), when parent fork child2, pid1 is't 0, and pid2 is 0
+    // pid2 (if exist), when parent fork child2, pid1 isn't 0, and pid2 is 0
     if (sub_process_num > 1 && pid1 > 0 && pid2 == 0) {
         exec_wrap(buf + pipe_index + 1, pipe_filedes, 0, 1);
     }
